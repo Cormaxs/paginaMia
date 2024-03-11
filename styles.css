@@ -56,7 +56,7 @@ a{
     font-size:1.2em;
 }
 .menu a{
-    font-size: 1.05em;
+    font-size: 1.5em;
 }
 /*TERMINA-FUENTES-ESTILOS*/
 
@@ -75,14 +75,15 @@ header{
     top: 0;
     display: grid;
    justify-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(330px, 43%));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 43%));
    column-gap: 5vw;
     width: 100%;
     background-color: #3333334a;
     backdrop-filter: blur(10px);
 }
 
-header > div{    
+header > div{  
+    flex-wrap: wrap;
     padding: 1vw 0 1vw 0;
     display: flex;
     justify-content: center;
@@ -217,9 +218,28 @@ fill:#3595cf;
 .tecnologias div > h4{
     margin: 30px 0 8px 0;
 }
-.tecnologias div > p{
-    color: var(--verde);
-    margin: 30px 0 30px 0;
+#barra > p{
+    height: 100%;  
+    transform: scale(2);
+    transform-origin: left;
+    transition: all .9s;
+    width: 55%;
+    background-color: var(--verde);
+}
+#barra> p:hover{
+    transform: scale(1);
+    width:55%;
+    transform-origin: left;
+    background-color: var(--verde);
+}
+#barra{
+    border: solid ;
+    overflow: hidden;
+    border-radius: 20px;
+    width: 80%; height: 20px;
+    color: var(--verde-obscuro);
+    margin:30px auto;
+   
 }
 
 
@@ -245,9 +265,40 @@ justify-content: center;
     border-top: 1px solid var(--verde-obscuro);
 }
 
+/*FOOTER*/
 footer{
     width: 100%;
     height: 300px;
     background-color:var(--gris-obscuro);
     backdrop-filter: blur(10%);
+}
+.containerFooter{
+    max-width: 90%;
+    margin: auto;
+    padding: 70px 0 10px 0;
+}
+.containerFooter > li{
+    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 15%));
+    justify-content: center;
+     text-align: center;
+}
+.containerFooter li ol > a{
+    text-decoration: none;
+    color: var(--fondoBlanco);
+}
+.containerFooter li ol > a:hover{
+  color: var(--botones);
+  text-shadow: 0 0px 10px var(--botones);
+}
+#copy{
+    position: relative;
+    top: 30%;
+    text-align: center;
+    margin:auto;
+    width: 80%;
+    color: var(--texto);
+    font-weight: 100;
+    font-size: .8em;
 }
